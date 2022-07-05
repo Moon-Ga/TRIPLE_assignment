@@ -171,4 +171,8 @@ button {
     cursor: not-allowed;
   }
 }
+
+strong{
+  font-weight: bold;
+}
 `
