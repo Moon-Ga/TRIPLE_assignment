@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { AppleBadge4X, PlayStore2X, Triple2X } from '../../assets/images'
+import CountUp from '../common/CountUp'
 
 const AchievementContainer = styled.div`
   position: relative;
@@ -61,26 +62,26 @@ const AwardsItem = styled.div<AwardsItemProps>`
   font-weight: bold;
 `
 
-function Achievement() {
+function Achievement(): JSX.Element {
   return (
     <AchievementContainer>
       <ContentLogoContainer>2021년 12월 기준</ContentLogoContainer>
       <MetricsContainer>
         <MetricsItem>
           <strong>
-            <span>700만 명</span>
+            <CountUp start={0} end={700} duration={2} />만 명
           </strong>
           의 여행자
         </MetricsItem>
         <MetricsItem>
           <strong>
-            <span>100만 개</span>
+            <CountUp start={0} end={100} duration={2} />만 개
           </strong>
           의 여행 리뷰
         </MetricsItem>
         <MetricsItem>
           <strong>
-            <span>470만 개</span>
+            <CountUp start={0} end={470} duration={2} />만 개
           </strong>
           의 여행 일정
         </MetricsItem>
