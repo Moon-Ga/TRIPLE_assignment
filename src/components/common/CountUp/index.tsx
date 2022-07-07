@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useEffect, useRef } from 'react'
 
 interface Props {
@@ -16,6 +17,7 @@ function CountUp({ start, end, duration }: Props): JSX.Element {
 
     let frame = start
     const totalFrames = Math.round((duration * 1000) / frameDuration)
+    console.log(totalFrames)
     const counter = setInterval(() => {
       frame += 1
       const progress = easeOutExpo(frame / totalFrames)

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import { AppleBadge4X, PlayStore2X, Triple2X } from '../../assets/images'
 import CountUp from '../common/CountUp'
+import CountUpp from '../common/CountUpp'
 
 const AchievementContainer = styled.div`
   position: relative;
@@ -69,19 +70,22 @@ function Achievement(): JSX.Element {
       <MetricsContainer>
         <MetricsItem>
           <strong>
-            <CountUp start={0} end={700} duration={2} />만 명
+            {/* <CountUp start={600} end={700} duration={2} />만 명 */}
+            <CountUpp start={690} end={700} duration={5} />만 명
           </strong>
           의 여행자
         </MetricsItem>
         <MetricsItem>
           <strong>
-            <CountUp start={0} end={100} duration={2} />만 개
+            {/* <CountUp start={0} end={100} duration={2} />만 개 */}
+            {/* <CountUpp start={0} end={100} duration={5} />만 개 */}
           </strong>
           의 여행 리뷰
         </MetricsItem>
         <MetricsItem>
           <strong>
-            <CountUp start={0} end={470} duration={2} />만 개
+            {/* <CountUp start={0} end={470} duration={2} />만 개 */}
+            {/* <CountUpp start={0} end={470} duration={5} />만 개 */}
           </strong>
           의 여행 일정
         </MetricsItem>
