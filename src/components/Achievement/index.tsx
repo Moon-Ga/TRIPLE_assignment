@@ -71,21 +71,21 @@ function Achievement(): JSX.Element {
         <MetricsItem>
           <strong>
             {/* <CountUp start={600} end={700} duration={2} />만 명 */}
-            <CountUpp start={690} end={700} duration={5} />만 명
+            <CountUpp start={0} end={700} duration={2} />만 명
           </strong>
           의 여행자
         </MetricsItem>
         <MetricsItem>
           <strong>
             {/* <CountUp start={0} end={100} duration={2} />만 개 */}
-            {/* <CountUpp start={0} end={100} duration={5} />만 개 */}
+            <CountUpp start={0} end={100} duration={2} />만 개
           </strong>
           의 여행 리뷰
         </MetricsItem>
         <MetricsItem>
           <strong>
             {/* <CountUp start={0} end={470} duration={2} />만 개 */}
-            {/* <CountUpp start={0} end={470} duration={5} />만 개 */}
+            <CountUpp start={0} end={470} duration={2} />만 개
           </strong>
           의 여행 일정
         </MetricsItem>

@@ -10,32 +10,33 @@ function CountUpp({ start, end, duration }: Props): JSX.Element {
   const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    const perMilli = (end - start) / (100 * duration)
+    const ticktime = 15
+    const count = (end - start) / (1000 * (1 / ticktime))
+    const interval = ticktime * duration
 
     const easeOutExpo = (t: number): number =>
       t === 1 ? 1 : 1 - Math.pow(3, -7 * t)
 
     let current = start
-
     let timer = 0
     setTimeout(() => {
-      timer += 5
+      timer += 2
       console.log(timer, 'timer')
-    }, 5000)
+    }, 2000)
     const counter = setInterval(() => {
-      current += perMilli
-      const progress = easeOutExpo((current - start) / (end - start))
-      console.log(current, 'current')
-      console.log(progress, 'progress')
-      console.log(current * progress, 'current * progress')
+      current += count
+      const progress = easeOutExpo(current / end)
       if (ref.current) {
-        ref.current.innerText = Math.round(current * progress).toString()
+        ref.current.innerText =
+          Math.floor(current) >= end
+            ? end.toString()
+            : Math.floor(progress * end).toString()
       }
 
-      if (Math.floor(current) === end) {
+      if (Math.floor(current) >= end) {
         clearInterval(counter)
       }
-    }, 10)
+    }, interval)
 
     return () => clearInterval(counter)
   }, [duration, end, start])
