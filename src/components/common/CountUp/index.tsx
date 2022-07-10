@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useEffect, useRef } from 'react'
 
 interface Props {
@@ -10,25 +9,27 @@ function CountUp({ start, end, duration }: Props): JSX.Element {
   const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    const frameDuration = 1000 / 60
+    const ticktime = 15
+    const count = (end - start) / (1000 * (1 / ticktime))
+    const interval = ticktime * duration
 
-    const easeOutExpo = (t: number): number =>
-      t === 1 ? 1 : 1 - Math.pow(3, -7 * t)
+    const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t))
 
-    let frame = start
-    const totalFrames = Math.round((duration * 1000) / frameDuration)
-    console.log(totalFrames)
+    let current = start
     const counter = setInterval(() => {
-      frame += 1
-      const progress = easeOutExpo(frame / totalFrames)
+      current += count
+      const progress = easeOutExpo(current / end)
       if (ref.current) {
-        ref.current.innerText = Math.floor(progress * end).toString()
+        ref.current.innerText =
+          Math.floor(current) >= end
+            ? end.toString()
+            : Math.floor(progress * end).toString()
       }
 
-      if (progress === 1) {
+      if (Math.floor(current) >= end) {
         clearInterval(counter)
       }
-    }, frameDuration)
+    }, interval)
 
     return () => clearInterval(counter)
   }, [duration, end, start])
