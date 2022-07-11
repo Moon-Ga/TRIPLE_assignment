@@ -16,9 +16,12 @@ function CountUp({ start, end, duration }: Props): JSX.Element {
     const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t))
 
     let current = start
+
     const counter = setInterval(() => {
       current += count
+
       const progress = easeOutExpo(current / end)
+
       if (ref.current) {
         ref.current.innerText =
           Math.floor(current) >= end

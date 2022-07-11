@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { AppleBadge4X, PlayStore2X, Triple2X } from '../../assets/images'
+import { AnimationWrapper } from '../../styles/mixins/animation'
 import CountUp from '../common/CountUp'
 
 const AchievementContainer = styled.div`
@@ -65,39 +66,45 @@ const AwardsItem = styled.div<AwardsItemProps>`
 function Achievement(): JSX.Element {
   return (
     <AchievementContainer>
-      <ContentLogoContainer>2021년 12월 기준</ContentLogoContainer>
-      <MetricsContainer>
-        <MetricsItem>
-          <strong>
-            <CountUp start={0} end={700} duration={2} />만 명
-          </strong>
-          의 여행자
-        </MetricsItem>
-        <MetricsItem>
-          <strong>
-            <CountUp start={0} end={100} duration={2} />만 개
-          </strong>
-          의 여행 리뷰
-        </MetricsItem>
-        <MetricsItem>
-          <strong>
-            <CountUp start={0} end={470} duration={2} />만 개
-          </strong>
-          의 여행 일정
-        </MetricsItem>
-      </MetricsContainer>
-      <AwardsContainer>
-        <AwardsItem imageurl={PlayStore2X}>
-          2018 구글 플레이스토어
-          <br />
-          올해의 앱 최우수상 수상
-        </AwardsItem>
-        <AwardsItem imageurl={AppleBadge4X}>
-          2018 애플 앱스토어
-          <br />
-          오늘의 여행앱 선정
-        </AwardsItem>
-      </AwardsContainer>
+      <AnimationWrapper type="fadeInUp" duration={0.7}>
+        <ContentLogoContainer>2021년 12월 기준</ContentLogoContainer>
+      </AnimationWrapper>
+      <AnimationWrapper type="fadeInUp" duration={0.7} delay={0.1}>
+        <MetricsContainer>
+          <MetricsItem>
+            <strong>
+              <CountUp start={0} end={700} duration={2} />만 명
+            </strong>
+            의 여행자
+          </MetricsItem>
+          <MetricsItem>
+            <strong>
+              <CountUp start={0} end={100} duration={2} />만 개
+            </strong>
+            의 여행 리뷰
+          </MetricsItem>
+          <MetricsItem>
+            <strong>
+              <CountUp start={0} end={470} duration={2} />만 개
+            </strong>
+            의 여행 일정
+          </MetricsItem>
+        </MetricsContainer>
+      </AnimationWrapper>
+      <AnimationWrapper type="fadeInUp" duration={0.7} delay={0.2}>
+        <AwardsContainer>
+          <AwardsItem imageurl={PlayStore2X}>
+            2018 구글 플레이스토어
+            <br />
+            올해의 앱 최우수상 수상
+          </AwardsItem>
+          <AwardsItem imageurl={AppleBadge4X}>
+            2018 애플 앱스토어
+            <br />
+            오늘의 여행앱 선정
+          </AwardsItem>
+        </AwardsContainer>
+      </AnimationWrapper>
     </AchievementContainer>
   )
 }
