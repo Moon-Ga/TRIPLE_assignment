@@ -140,10 +140,6 @@ table {
   &::after {
     box-sizing: border-box;
   }
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 a {

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { AppleBadge4X, PlayStore2X, Triple2X } from '../../assets/images'
-import CountUp from '../../components/common/CountUp'
-import { AnimationWrapper } from '../../styles/mixins/animation'
+import { AppleBadge4X, PlayStore2X, Triple2X } from 'assets/images'
+import CountUp from 'components/common/CountUp'
+import { AnimationWrapper } from 'styles/mixins/animation'
 
 const AchievementContainer = styled.div`
   position: relative;
