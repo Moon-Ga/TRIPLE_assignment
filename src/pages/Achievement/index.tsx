@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Original from './Original'
 import Refactored from './Refactored'
 
-const AchievementWrapper = styled.div`
+const AchievementWrapper = styled.main`
   display: flex;
   flex-direction: column;
   margin: 0px auto;

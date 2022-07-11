@@ -20,6 +20,7 @@ const ContentLogoContainer = styled.figure`
   position: relative;
   grid-area: a;
 `
+
 const ContentLogoImage = styled.img`
   width: 400px;
 `
