@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css, FlattenSimpleInterpolation } from 'styled-components'
 
 export const textStyle = (
   fontSize: number,
@@ -6,7 +6,7 @@ export const textStyle = (
   letterSpacing?: number,
   fontWeight?: string,
   fontFamily = 'sans-serif',
-) => css`
+): FlattenSimpleInterpolation => css`
   font-size: ${fontSize}px;
   line-height: ${lineHeight}px;
   font-weight: ${fontWeight};
