@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Achievement from './components/Achievement'
+import Achievement from './pages/Achievement'
 
 const AppWrapper = styled.div`
   display: flex;
